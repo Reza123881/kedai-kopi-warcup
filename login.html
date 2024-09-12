@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Kedai Kopi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Kedai Kopi Warcup</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="alamat.html">Alamat</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="buat akun.html">Buat Akun</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="welcome">
+            <h2>Selamat Datang di Kedai Kopi Warcup</h2>
+            <p>Nikmati kopi terbaik dengan suasana yang nyaman dan pelayanan terbaik.</p>
+        </section>
+
+        <!-- Form Login pada halaman beranda -->
+        <section id="login">
+            <h2>Silakan Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+            <p id="error-message" style="color: red; display: none;">Username atau password salah!</p>
+            <p id="success-message" style="color: green; display: none;">Login berhasil! Anda akan dialihkan...</p>
+        </section>
+
+        <section id="menu">
+            <h2>Menu Kami</h2>
+            <p>Temukan berbagai macam kopi dan makanan ringan yang kami tawarkan.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Kedai Kopi. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript untuk Verifikasi Login -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah pengiriman form secara default
+
+            // Ambil nilai dari input username dan password
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Cek apakah username dan password benar (untuk contoh ini menggunakan nilai hardcoded)
+            if (username === 'admin' && password === '1234') {
+                alert('Login berhasil!');
+                // Tampilkan pesan sukses atau arahkan ke halaman lain setelah login berhasil
+                document.getElementById('error-message').style.display = 'none';
+            } else {
+                // Tampilkan pesan error jika username atau password salah
+                document.getElementById('error-message').style.display = 'block';
+            }
+        });
+    </script>
+    <img src="mennu.jpg"alt="menu">
+</body>
+</html>
